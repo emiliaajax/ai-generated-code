@@ -1,0 +1,144 @@
+<?xml version="1.0"?>
+<!DOCTYPE module PUBLIC
+        "-//Checkstyle//DTD Checkstyle Configuration 1.3//EN"
+        "https://checkstyle.org/dtds/configuration_1_3.dtd">
+
+<module name = "Checker">
+    <property name="charset" value="UTF-8"/>
+
+    <property name="severity" value="warning"/>
+
+    <property name="fileExtensions" value="java, properties, xml"/>
+    <!-- Excludes all 'module-info.java' files              -->
+    <!-- See https://checkstyle.org/config_filefilters.html -->
+    <module name="BeforeExecutionExclusionFileFilter">
+        <property name="fileNamePattern" value="module\-info\.java$"/>
+    </module>
+    <!-- https://checkstyle.org/config_filters.html#SuppressionFilter -->
+    <module name="SuppressionFilter">
+        <property name="file" value="${org.checkstyle.google.suppressionfilter.config}"
+                  default="checkstyle-suppressions.xml" />
+        <property name="optional" value="true"/>
+    </module>
+
+    <!-- Chapter 5 (Formatting) with the subheading Vertical Formatting. 
+    "It appears to be possible to build significant systems out of files 
+    that are typically 200 lines long with an upper limit of 500. 
+    Altough this should not be a hard and fast rule, 
+    it should be considered very desirable"  -->
+    <module name="FileLength">
+        <property name="max" value="500"/>
+        <property name="fileExtensions" value="java"/>
+    </module>
+
+    <!-- Chapter 5 (Formatting) with the subheading Horizontal Formatting. 
+    "This suggests that we should strive to keep our lines short. 
+    The old Hollerith limit of 80 is a bit arbitrary, and I'm not opposed 
+    to lines edging out to 100 or even 120. But beyond that is probably just careless." -->
+    <module name="LineLength">
+        <property name="fileExtensions" value="java"/>
+        <property name="max" value="120"/>
+        <property name="ignorePattern" value="^package.*|^import.*|a href|href|http://|https://|ftp://"/>
+    </module>
+
+    <module name="TreeWalker">
+        <module name="GenericWhitespace">
+            <message key="ws.followed" value="GenericWhitespace ''{0}'' is followed by whitespace."/>
+            <message key="ws.preceded" value="GenericWhitespace ''{0}'' is preceded with whitespace."/>
+            <message key="ws.illegalFollow" value="GenericWhitespace ''{0}'' should followed by whitespace."/>
+            <message key="ws.notPreceded" value="GenericWhitespace ''{0}'' is not preceded with whitespace."/>
+        </module>
+
+        <!-- Chapter 5 (Formatting) with the subheading Indentation. 
+        Indentation is configured as seen below. The code is from the google_checks. -->
+        <!-- <module name="Indentation">
+            <property name="basicOffset" value="2"/>
+            <property name="braceAdjustment" value="2"/>
+            <property name="caseIndent" value="2"/>
+            <property name="throwsIndent" value="4"/>
+            <property name="lineWrappingIndentation" value="4"/>
+            <property name="arrayInitIndent" value="2"/>
+        </module> -->
+
+        <!-- MOTIVATION IS NEEDED but it should be readable. According to 
+        checkstyle docs: "With inner assignments, it is difficult to see 
+        all places where a variable is set."-->
+        <module name="InnerAssignment"/>
+
+        <!-- Motivation to fileMaximum value: Chapter 5 (Formatting) with the 
+        subheading Vertical Formatting. "It appears to be possible to build 
+        significant systems out of files that are typically 200 lines long
+        with an upper limit of 500. Altough this should not be a hard and
+        fast rule, it should be considered very desirable" 
+      
+        Motivation to classMaximum value: Chapter 5 (Formatting) with the 
+        subheading Vertical Formatting. "In Java, file size is closely 
+        related to class size"
+        
+        Motivation to methodMaxium value: Chapter 3 (Functions) with the
+        subheading Small! "Functions should not be 100 lines long. 
+        Functions should hardly ever be 20 lines long." -->
+        <module name="JavaNCSS">
+            <property name="fileMaximum" value="500"/>
+            <property name="classMaximum" value="500"/>
+            <property name="methodMaximum" value="20"/>
+        </module>
+
+        <!-- Ignore field declarations of magic numbers. 
+        Under subheading G25: Replace Magic Numbers with Named Constants. 
+        "In general it is a bad idea to have raw numbers in your code. 
+        You should hide them behind well-named constants." -->
+        <module name="MagicNumber">
+            <property name="ignoreFieldDeclaration" value="true"/>
+        </module>
+
+        <!-- Chapter 3 (Functions) with the subheading Small! 
+        "Functions should not be 100 lines long. Functions should hardly ever be 20 lines long." -->
+        <module name="MethodLength">
+            <property name="tokens" value="METHOD_DEF"/>
+            <property name="max" value="20"/>
+            <property name="countEmpty" value="false"/>
+        </module>
+
+        <!-- Chapter 3 (Functions) with subheading Blocks and Indenting. 
+        "This also implies that functions should not be large enough to 
+        hold nested structures. Therefore, the indent level of a function
+        should not be greater than one or two."-->
+        <module name="NestedForDepth">
+            <property name="max" value="1"/>
+        </module>
+
+        <module name="NestedIfDepth">
+            <property name="max" value="1"/>
+        </module>
+
+        <module name="NestedTryDepth">
+            <property name="max" value="1"/>
+        </module>
+
+        <!-- Clean code cares about readability. From checkstyle docs: 
+        "It's very difficult to read multiple statements on one line"-->
+        <module name="OneStatementPerLine"/>
+
+        <!-- Chapter 3 (Functions) with subheading Function Arguments. 
+        "More than three (polyadic) requires very special justification - and then shouldn't be used anyway" -->
+        <module name="ParameterNumber">
+            <property name="max" value="3"/>
+            <property name="tokens" value="METHOD_DEF"/>
+        </module>
+
+        <module name="SuppressionXpathSingleFilter">
+            <!-- suppresion is required till https://github.com/checkstyle/checkstyle/issues/7541 -->
+            <property name="id" value="RightCurlyAlone"/>
+            <property name="query" value="//RCURLY[parent::SLIST[count(./*)=1]
+                                    or preceding-sibling::*[last()][self::LCURLY]]"/>
+        </module>
+
+        <!-- https://checkstyle.org/config_filters.html#SuppressionXpathFilter -->
+        <module name="SuppressionXpathFilter">
+            <property name="file" value="${org.checkstyle.google.suppressionxpathfilter.config}"
+                      default="checkstyle-xpath-suppressions.xml" />
+            <property name="optional" value="true"/>
+        </module>
+    </module>
+</module>
