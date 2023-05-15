@@ -3,11 +3,12 @@
 This guide will describe how to generate ChatGPT and Copilot code. It will also describe how to use the scripts that extracts the data needed for the Controlled experiment. The generated data can be used in Matlab or AI-Theraphy Statistics to analyze the results. Data for number of lines, JUnit test results and Checkstyle results will be generated using this guide.
 
 ## Prerequisites
-1. Install NodeJS (NodeJS 18 LTS version is recommended). https://nodejs.org/en/download/
-2. Download JUnit and hamcrest-core jar files. https://github.com/junit-team/junit4/wiki/Download-and-Install
-3. Add the path to the JUnit and hamcrest-core jar files on line 5 and 6 in compileCode.sh located in the testScripts folder in the root of the project.
-4. Add the path to the JUnit and hamcrest-core jar files on line 16 and 17 in runChatGPTTests.sh located in the testScripts folder in the root of the project.
-5. Add the path to the JUnit and hamcrest-core jar files on line 16 and 17 in runCopilotTests.sh located in the testScripts folder in the root of the project.
+1. Install Matlab https://se.mathworks.com/downloads/
+2. Install NodeJS (NodeJS 18 LTS version is recommended). https://nodejs.org/en/download/
+3. Download JUnit and hamcrest-core jar files. https://github.com/junit-team/junit4/wiki/Download-and-Install
+4. Add the path to the JUnit and hamcrest-core jar files on line 5 and 6 in compileCode.sh located in the testScripts folder in the root of the project.
+5. Add the path to the JUnit and hamcrest-core jar files on line 16 and 17 in runChatGPTTests.sh located in the testScripts folder in the root of the project.
+6. Add the path to the JUnit and hamcrest-core jar files on line 16 and 17 in runCopilotTests.sh located in the testScripts folder in the root of the project.
 
 ## Running project preparation scripts
 
@@ -59,6 +60,11 @@ This guide will describe how to generate ChatGPT and Copilot code. It will also 
 2. In the root of the project type "./runChecks.sh".
 3. Wait until the script has finished (it can take a few minutes).
 4. A file called "checkstyleReport.xml" has been updated with the reports data in the reports folder (/standaloneCheckstyle/reports/checkstyleReport.xml).
+5. Open the following repository in Matlab: https://github.com/emiliaajax/ai-tools-analysis
+6. Add or write over the "checkstyleReport.xml" file in /data/checkstyle.
+6. Open the file "convertCheckstyleXMLToJson.m" in the /checkstyle folder.
+7. Press the green run button.
+8. A JSON checkstyle report has been created in /data/checkstyle. This JSON report is used for the analysis in Matlab.
 
 ### Running JUnit tests
 1. Open a new terminal window.
