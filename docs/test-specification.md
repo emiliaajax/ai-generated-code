@@ -52,20 +52,6 @@ The testing is done on the scripts used to run the unit tests and code quality c
 #### **TC2.1 Control the output from the unit tests for ChatGPT**
 
 ###### **Input**
-- Go to ./mergeTestResults/results/
-- Open chatGPTErrors.json
-- Observe the error count for Knapsack
-- Go to ./app/src/test/ChatGPT/Knapsack
-- Run all the tests located in the Tx folders.
-- Count the compilation errors.
-
-###### **Output**
-- When the testing is done, observe that testResults.json has been created in the root of the project.
-- When the testing is done, observe that chatGPTErrors.json, chatGPTResults.json, copilotErrors.json and copilotResults.json has been created in the folder ./mergeTestResults/results/ 
-
-#### **TC2.1 Control the output from the unit tests for ChatGPT**
-
-###### **Input**
 - Open testResults.json
 - Count the number of 1s in BreadthFirstSearch for ChatGPT
 - Go to ./app/src/test/ChatGPT/BreadthFirstSearch
