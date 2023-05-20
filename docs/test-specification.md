@@ -11,7 +11,8 @@ The testing is done on the scripts used to run the unit tests and code quality c
 | TC1.2 | 1/:white_check_mark: |
 | TC2.1 | 1/:white_check_mark: |
 | TC2.2 | 1/:white_check_mark: |
-| COVERAGE & SUCCESS | 4/:white_check_mark: |
+| TC2.3 | 1/:white_check_mark: |
+| COVERAGE & SUCCESS | 5/:white_check_mark: |
 
 ## Test cases
 
@@ -49,7 +50,7 @@ The testing is done on the scripts used to run the unit tests and code quality c
 - When the testing is done, observe that testResults.json has been created in the root of the project.
 - When the testing is done, observe that chatGPTErrors.json, chatGPTResults.json, copilotErrors.json and copilotResults.json has been created in the folder ./mergeTestResults/results/ 
 
-#### **TC2.1 Control the output from the unit tests for ChatGPT**
+#### **TC2.2 Control the output from the unit tests for ChatGPT**
 
 ###### **Input**
 - Open testResults.json
@@ -62,7 +63,7 @@ The testing is done on the scripts used to run the unit tests and code quality c
 ###### **Output**
 - The number from the testResults file and the number from the manual execution of the tests should be the same.
 
-#### **TC2.2 Control the output from the tests for Copilot**
+#### **TC2.3 Control the output from the tests for Copilot**
 
 ###### **Input**
 - Open testResults.json
