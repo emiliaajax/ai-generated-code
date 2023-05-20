@@ -90,6 +90,13 @@ The testing is done on the scripts used to run the unit tests and code quality c
 ###### **Input**
 - Go to the `./standaloneCheckstyle/reports/`.
 - Open the `checkstyleReport.xml` file.
+- Observe the errors for T50/MergeSort.java at lines 925-929.
+- Go to ./app/src/main/java/Copilot/MergeSort/T50/
+- Open the file MergeSort.java located in the current folder
+- Go to line 9 and observe if more than 3 parameters is used.
+- Go to line 18 and observe if more than 3 parameters is used and if method length is above 20.
 
 ###### **Output**
-- When the checking is done, observe that a `checkstyleReport.xml` has been created in the `./standaloneCheckstyle/reports/` folder.
+- The method on line 9 should use more than 3 parameters.
+- The method on line 18 should use more than 3 parameters.
+- The method on line 18 should be over 20 in length.
