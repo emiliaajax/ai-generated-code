@@ -9,7 +9,7 @@ bin2dec="BinaryToDecimal"
 binarysearch="BinarySearch"
 
 # VARIABLES TO BE MODIFIED
-algorithm="ALGORITHM"
+algorithm="ADD AN ALGORITHM HERE PLEASE"
 from=21
 to=50
 
