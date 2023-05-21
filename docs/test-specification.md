@@ -1,7 +1,7 @@
 # Test specification
 
 ## What is tested and how?
-The testing is done on the scripts used to run the unit tests and code quality checks to ensure correct outcome. The testing is done with manual test cases.
+Testing is performed to ensure the accurate outcome when running scripts to check the correctness of the code and to perform quality checks. The testing is carried out using manual test cases.
 
 ## Test matrix
 
@@ -12,7 +12,15 @@ The testing is done on the scripts used to run the unit tests and code quality c
 | TC2.1 | 1/:white_check_mark: |
 | TC2.2 | 1/:white_check_mark: |
 | TC2.3 | 1/:white_check_mark: |
-| COVERAGE & SUCCESS | 5/:white_check_mark: |
+| TC3.1 | 1/:white_check_mark: |
+| TC3.2 | 1/:white_check_mark: |
+| TC3.3 | 1/:white_check_mark: |
+| TC3.4 | 1/:white_check_mark: |
+| TC3.5 | 1/:white_check_mark: |
+| TC3.6 | 1/:white_check_mark: |
+| COVERAGE & SUCCESS | 11/:white_check_mark: |
+
+**Last tested**: 21/5-23
 
 ## Test cases
 
@@ -90,13 +98,64 @@ The testing is done on the scripts used to run the unit tests and code quality c
 ###### **Input**
 - Go to the `./standaloneCheckstyle/reports/`.
 - Open the `checkstyleReport.xml` file.
-- Observe the errors for T50/MergeSort.java at lines 925-929.
-- Go to ./app/src/main/java/Copilot/MergeSort/T50/
-- Open the file MergeSort.java located in the current folder
+- Observe the errors for `\app\src\main\java\ChatGPT\MergeSort\T1\MergeSort.java` at lines 1479-1483.
+- Go to `./app/src/main/java/ChatGPT/MergeSort/T1/`
+- Open the file `MergeSort.java` located in the current folder
+- Go to line 13 and observe if more than 3 parameters is used.
+- Go to line 22 and observe if more than 3 parameters is used and if method length is above 20 (ignore blank lines).
+
+###### **Output**
+- The method on line 13 should use more than 3 parameters.
+- The method on line 22 should use more than 3 parameters.
+- The method on line 22 should be over 20 in length.
+
+#### **TC3.3 Control the output from the Checkstyle checks for Copilot**
+
+###### **Input**
+- Go to the `./standaloneCheckstyle/reports/`.
+- Open the `checkstyleReport.xml` file.
+- Observe the errors for `app\src\main\java\Copilot\MergeSort\T50\MergeSort.java` at lines 925-929.
+- Go to `./app/src/main/java/Copilot/MergeSort/T50/`
+- Open the file `MergeSort.java` located in the current folder
 - Go to line 9 and observe if more than 3 parameters is used.
-- Go to line 18 and observe if more than 3 parameters is used and if method length is above 20.
+- Go to line 18 and observe if more than 3 parameters is used and count if method length is above 20 (ignore blank lines).
 
 ###### **Output**
 - The method on line 9 should use more than 3 parameters.
 - The method on line 18 should use more than 3 parameters.
 - The method on line 18 should be over 20 in length.
+
+#### **TC3.4 Convert the Checkstyle results from XML to JSON** 
+
+###### **Input**
+- Clone the following GitHub project: https://github.com/emiliaajax/ai-tools-analysis
+- Open the project in Matlab.
+- Open the file `convertCheckstyleXMLToJson.m` in the `./checkstyle/` folder.
+- Press the run button.
+
+###### **Output**
+- `CheckstyleReport.json` should have been created in the `./data/checkstyle/` folder.
+
+#### **TC3.5 Control that the created Checkstyle JSON file is correct for ChatGPT** 
+
+###### **Input**
+- Go to the `./data/checkstyle/` folder.
+- Open `CheckstyleReport.json`
+- Observe the number at the first element for MergeSort in ChatGPT.
+- Open `CheckstyleReport.xml`
+- Count the number of errors at `\app\src\main\java\ChatGPT\MergeSort\T1\MergeSort.java` (lines 1479-1483).
+
+###### **Output**
+- The number at the first element for MergeSort in ChatGPT in `CheckstyleReport.json` should be the same as the number of errors manually counted in `\app\src\main\java\ChatGPT\MergeSort\T1\MergeSort.java` (lines 1479-1483).
+
+#### **TC3.6 Control that the created Checkstyle JSON file is correct for Copilot** 
+
+###### **Input**
+- Go to the `./data/checkstyle/` folder.
+- Open `CheckstyleReport.json`
+- Observe the number at the 46th element for MergeSort in Copilot.
+- Open `CheckstyleReport.xml`
+- Count the number of errors at `\app\src\main\java\Copilot\MergeSort\T50\MergeSort.java` (lines 925-929).
+
+###### **Output**
+- The number at the 46th element for MergeSort in Copilot in `CheckstyleReport.json` should be the same as the number of errors manually counted in `\app\src\main\java\Copilot\MergeSort\T50\MergeSort.java` (lines 925-929).
