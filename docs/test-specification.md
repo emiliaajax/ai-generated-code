@@ -3,6 +3,9 @@
 ## What is tested and how?
 Testing is performed to ensure the accurate outcome when running scripts to check the correctness of the code and to perform quality checks. The testing is carried out using manual test cases.
 
+## Last tested
+21/5-23
+
 ## Test matrix
 
 | Test | Status |
@@ -24,8 +27,6 @@ Testing is performed to ensure the accurate outcome when running scripts to chec
 | TC4.4 | 1/:white_check_mark: |
 | TC4.5 | 1/:white_check_mark: |
 | COVERAGE & SUCCESS | 16/:white_check_mark: |
-
-**Last tested**: 21/5-23
 
 ## Test cases
 
