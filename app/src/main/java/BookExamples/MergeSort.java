@@ -1,5 +1,6 @@
 package BookExamples;
 
+// Source: https://github.com/TrainingByPackt/Data-Structures-and-Algorithms-in-Java/blob/master/src/main/java/com/packt/datastructuresandalg/lesson2/activity/mergesort/solution/MergeSort.java
 public class MergeSort {
 
   private void merge(int[] array, int start, int middle, int end) {

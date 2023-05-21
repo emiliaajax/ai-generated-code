@@ -1,5 +1,6 @@
 package BookExamples;
 
+// Source: https://github.com/TrainingByPackt/Data-Structures-and-Algorithms-in-Java/blob/master/src/main/java/com/packt/datastructuresandalg/lesson4/knapsack/Knapsack.java
 public class Knapsack {
   public int bottomUp(int weight, int weights[], int values[]) {
     int[][] dp = new int[values.length + 1][weight + 1];

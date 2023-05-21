@@ -1,5 +1,6 @@
 package BookExamples;
 
+// Source: https://github.com/TrainingByPackt/Data-Structures-and-Algorithms-in-Java/blob/master/src/main/java/com/packt/datastructuresandalg/lesson1/binarytodecimal/BinaryToDecimal.java
 public class BinaryToDecimal {
   public int convertToDecimal(String binary) {
     int conversion = 1;

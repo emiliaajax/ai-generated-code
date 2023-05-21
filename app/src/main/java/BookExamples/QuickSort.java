@@ -1,5 +1,6 @@
 package BookExamples;
 
+// Source: https://github.com/TrainingByPackt/Data-Structures-and-Algorithms-in-Java/blob/master/src/main/java/com/packt/datastructuresandalg/lesson2/sorting/QuickSort.java
 public class QuickSort {
   public void sort(int[] numbers) {
     sort(numbers, 0, numbers.length - 1);

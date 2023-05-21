@@ -1,5 +1,6 @@
 package BookExamples;
 
+// Source: https://github.com/TrainingByPackt/Data-Structures-and-Algorithms-in-Java/blob/master/src/main/java/com/packt/datastructuresandalg/lesson1/binarysearch/BinarySearch.java
 public class BinarySearch {
   public boolean binarySearch(int x, int[] sortedNumbers) {
     int end = sortedNumbers.length - 1;
