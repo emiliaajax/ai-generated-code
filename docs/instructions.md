@@ -52,7 +52,7 @@ This guide will describe how to generate ChatGPT and Copilot code. It will also 
 1. Open a new terminal window.
 2. Go into the lineCounter folder in the root of the project by typing "cd lineCounter".
 3. Type "npm install" to install the dependencies.
-4. Type "node start" to run the script.
+4. Type "npm start" to run the script.
 5. The data will be written to a file called "AlgorithmsLineCount.json" in the lineCounter folder.
 
 ### Running Checkstyle

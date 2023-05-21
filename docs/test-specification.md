@@ -18,7 +18,12 @@ Testing is performed to ensure the accurate outcome when running scripts to chec
 | TC3.4 | 1/:white_check_mark: |
 | TC3.5 | 1/:white_check_mark: |
 | TC3.6 | 1/:white_check_mark: |
-| COVERAGE & SUCCESS | 11/:white_check_mark: |
+| TC4.1 | 1/:white_check_mark: |
+| TC4.2 | 1/:white_check_mark: |
+| TC4.3 | 1/:white_check_mark: |
+| TC4.4 | 1/:white_check_mark: |
+| TC4.5 | 1/:white_check_mark: |
+| COVERAGE & SUCCESS | 16/:white_check_mark: |
 
 **Last tested**: 21/5-23
 
@@ -39,7 +44,7 @@ Testing is performed to ensure the accurate outcome when running scripts to chec
 
 ###### **Input**
 - Go to `./app/bin/test/ChatGPT/Knapsack` and observe that folder T30 is missing
-- Go to `./app/src/test/ChatGPT/Knapsack/T30/`
+- Go to `./app/src/test/java/ChatGPT/Knapsack/T30/`
 - Run the unit tests in the test file KnapsackTest.java
 
 ###### **Output**
@@ -63,7 +68,7 @@ Testing is performed to ensure the accurate outcome when running scripts to chec
 ###### **Input**
 - Open `testResults.json`
 - Count the number of 1s in BreadthFirstSearch for ChatGPT
-- Go to `./app/src/test/ChatGPT/BreadthFirstSearch/`
+- Go to `./app/src/test/java/ChatGPT/BreadthFirstSearch/`
 - Run all the unit tests for the test class located in the `Tx` folders (if message about build error occurs, press "continue" or "continue always")
 - Count the number of failed algorithms
 - Compare the number from the `testResults.json` file and the number from the manual execution of the tests
@@ -76,7 +81,7 @@ Testing is performed to ensure the accurate outcome when running scripts to chec
 ###### **Input**
 - Open testResults.json
 - Count the number of 1s in BinarySearch for Copilot
-- Go to `./app/src/test/Copilot/BinarySearch/`
+- Go to `./app/src/test/java/Copilot/BinarySearch/`
 - Run all the unit tests for the test class located in the `Tx` folders (if message about build error occurs, press continue)
 - Count the number of failed algorithms
 - Compare the number from the `testResults.json` file and the number from the manual execution of the tests
@@ -102,7 +107,7 @@ Testing is performed to ensure the accurate outcome when running scripts to chec
 - Go to `./app/src/main/java/ChatGPT/MergeSort/T1/`
 - Open the file `MergeSort.java` located in the current folder
 - Go to line 13 and observe if more than 3 parameters is used.
-- Go to line 22 and observe if more than 3 parameters is used and if method length is above 20 (ignore blank lines).
+- Go to line 22 and observe if more than 3 parameters is used and if method length is above 20 (ignore blank lines and comments).
 
 ###### **Output**
 - The method on line 13 should use more than 3 parameters.
@@ -118,7 +123,7 @@ Testing is performed to ensure the accurate outcome when running scripts to chec
 - Go to `./app/src/main/java/Copilot/MergeSort/T50/`
 - Open the file `MergeSort.java` located in the current folder
 - Go to line 9 and observe if more than 3 parameters is used.
-- Go to line 18 and observe if more than 3 parameters is used and count if method length is above 20 (ignore blank lines).
+- Go to line 18 and observe if more than 3 parameters is used and count if method length is above 20 (ignore blank lines and comments).
 
 ###### **Output**
 - The method on line 9 should use more than 3 parameters.
@@ -159,3 +164,61 @@ Testing is performed to ensure the accurate outcome when running scripts to chec
 
 ###### **Output**
 - The number at the 46th element for MergeSort in Copilot in `CheckstyleReport.json` should be the same as the number of errors manually counted in `\app\src\main\java\Copilot\MergeSort\T50\MergeSort.java` (lines 925-929).
+
+#### **TC4.1 Count the lines of the generated algorithms**
+
+###### **Input**
+- Go to `./lineCounter/` from the root of the project.
+- Install dependencies (`npm install`)
+- Run the script to count the lines (`npm start`)
+
+###### **Output**
+- Observe that an `AlgorithmsLineCount.json`file has been created in the `./lineCounter/`folder.
+
+#### **TC4.2 Count the lines of a generated BinarySearch algorithm by ChatGPT**
+
+###### **Input**
+- Go to `./lineCounter/` from the root of the project.
+- Open the `AlgorithmsLineCount.json`
+- Observe the number on the first element in BinarySearch in ChatGPT.
+- Open `./app/src/main/java/ChatGPT/BinarySearch/T1/BinarySearch.java`
+- Count the number of lines in the opened file (ignore blank lines and comments).
+
+###### **Output**
+- The number on the first element in BinarySearch in ChatGPT should be the same as the manually counted number in `./app/src/main/java/ChatGPT/BinarySearch/T1/BinarySearch.java`.
+
+#### **TC4.3 Count the lines of a generated Quicksort algorithm by ChatGPT**
+
+###### **Input**
+- Go to `./lineCounter/` from the root of the project.
+- Open the `AlgorithmsLineCount.json`
+- Observe the number on the first element in Quicksort in ChatGPT.
+- Open `./app/src/main/java/ChatGPT/Quicksort/T1/Quicksort.java`
+- Count the number of lines in the opened file (ignore blank lines and comments).
+
+###### **Output**
+- The number on the first element in Quicksort in ChatGPT should be the same as the manually counted number in `./app/src/main/java/ChatGPT/Quicksort/T1/Quicksort.java`.
+
+#### **TC4.4 Count the lines of a generated BinarySearch algorithm by Copilot**
+
+###### **Input**
+- Go to `./lineCounter/` from the root of the project.
+- Open the `AlgorithmsLineCount.json`
+- Observe the number on the first element in BinarySearch in Copilot.
+- Open `./app/src/main/java/Copilot/BinarySearch/T1/BinarySearch.java`
+- Count the number of lines in the opened file (ignore blank lines and comments).
+
+###### **Output**
+- The number on the first element in BinarySearch in Copilot should be the same as the manually counted number in `./app/src/main/java/Copilot/BinarySearch/T1/BinarySearch.java`.
+
+#### **TC4.5 Count the lines of a generated Quicksort algorithm by Copilot**
+
+###### **Input**
+- Go to `./lineCounter/` from the root of the project.
+- Open the `AlgorithmsLineCount.json`
+- Observe the number on the first element in Quicksort in Copilot.
+- Open `./app/src/main/java/Copilot/Quicksort/T1/Quicksort.java`
+- Count the number of lines in the opened file (ignore blank lines and comments).
+
+###### **Output**
+- The number on the first element in Quicksort in Copilot should be the same as the manually counted number in `./app/src/main/java/Copilot/Quicksort/T1/Quicksort.java`.
